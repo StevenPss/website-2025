@@ -63,7 +63,7 @@ export const products = [
           Our tech consulting company specializes in building custom software solutions tailored to the unique needs of businesses. Leveraging cloud technologies and modern development practices, we help companies innovate, scale, and optimize their operations.{" "}
         </p>
         <p>
-          Whether it's migrating workloads to AWS, designing scalable architectures, or developing bespoke applications, our team combines technical expertise with strategic insight to deliver impactful results. We partner closely with clients to ensure solutions align with their goals and drive lasting value.
+          Whether it&apos;s migrating workloads to AWS, designing scalable architectures, or developing bespoke applications, our team combines technical expertise with strategic insight to deliver impactful results. We partner closely with clients to ensure solutions align with their goals and drive lasting value.
         </p>{" "}
       </div>
     ),
