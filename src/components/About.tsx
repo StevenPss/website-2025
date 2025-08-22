@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 
 export default function About() {
   const images = [
-    "https://website-2025-bucket.s3.af-south-1.amazonaws.com/steven-carte.jpeg",
-    "https://website-2025-bucket.s3.af-south-1.amazonaws.com/aws-mzansi.jpg",
+    "https://website-2025-bucket.s3.af-south-1.amazonaws.com/blog/aws-summit-jhb-2025/Golden-Jacket.jpg",
+    "https://website-2025-bucket.s3.af-south-1.amazonaws.com/blog/aws-summit-jhb-2025/Fun-Selfie-2.jpg",
     "https://website-2025-bucket.s3.af-south-1.amazonaws.com/anime-characters.jpg",
-    "https://website-2025-bucket.s3.af-south-1.amazonaws.com/carte.jpg",
+    "https://website-2025-bucket.s3.af-south-1.amazonaws.com/steven-carte.jpeg",
   ];
   return (
     <div>
