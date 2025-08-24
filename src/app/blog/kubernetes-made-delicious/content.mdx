@@ -1,0 +1,88 @@
+import { BlogLayout } from "@/components/BlogLayout";
+
+import { CodeWindow } from "@/components/CodeWindow";
+
+export const meta = {
+  date: "2025-08-24",
+  title: "Day 1: Kubernetes Made Delicious",
+  description:
+    "Learn Kubernetes the tasty way! Spin up your first mini-cluster with Rancher Desktop, understand Pods, Nodes, and Clusters, and see how Kubernetes orchestrates your “kitchen” like a master chef.",
+  image:
+    "https://website-2025-bucket.s3.af-south-1.amazonaws.com/blog/kubernetes-made-delicious/kubernetes-made-delicious.jpg",
+  tags: ["Kubernetes", "Containers", "DevOps","Rancher Desktop", "Cloud Orchestration"],
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />; 
+
+> *“Think of Kubernetes like running a busy restaurant kitchen. Each dish (container) has to be cooked, plated, and delivered on time. Kubernetes is your head chef making sure nothing burns, nothing gets lost, and every customer leaves happy.”*
+
+---
+
+## 1: Containers vs Virtual Machines
+
+Before Kubernetes, apps ran in **VMs** like giving each dish its own personal kitchen. Overkill, expensive, and slow.  
+
+Containers changed the game:  
+- Lightweight, portable, and easy to move  
+- Like prepping multiple dishes on the same kitchen counter everyone shares the same tools (OS), but each dish stays separate.  
+
+Problem: With 50 dishes to prepare at once, chaos ensues. Who keeps track? Who replaces burnt dishes? Enter **Kubernetes**.  
+
+---
+
+## 2: Kubernetes in the Kitchen
+
+Kubernetes is your **head chef**:  
+- Makes sure every dish (Pod) is cooked and ready on time  
+- Replaces burnt or dropped dishes automatically  
+- Scales up when more customers (traffic) arrive  
+- Ensures dishes that need to be served together arrive together (networking)  
+
+---
+
+## 3: Hands-On with Rancher Desktop
+
+1. Install [Rancher Desktop](https://rancherdesktop.io/)  
+2. Pick the latest Kubernetes version  
+3. Open terminal and check your “kitchen”:
+
+<CodeWindow title="Command">
+```bash
+kubectl get nodes
+```
+</CodeWindow>
+
+Example output:  
+
+![kubectl get nodes](https://website-2025-bucket.s3.af-south-1.amazonaws.com/blog/kubernetes-made-delicious/kubectl-get-nodes.png)
+
+Explanation:  
+- `Ready` = kitchen is open and ready to cook  
+- `control-plane` = head chef is on duty  
+- `VERSION` = which Kubernetes recipe you’re using  
+
+---
+
+## 4: Pods = Plates
+
+Pods = plates. Containers = the food on the plates.  
+Kubernetes ensures:  
+- Every plate is ready on time  
+- Plates are replaced if dropped  
+- Proper coordination for dishes that need to arrive together  
+
+---
+
+## Wrap-Up
+
+Today you:  
+- Learned what Kubernetes is  
+- Understood containers vs VMs  
+- Spun up your first mini-cluster with Rancher Desktop  
+- Saw how Pods work in action  
+
+---
+
+## Coming Tomorrow
+
+Day 2, we’ll peek behind the kitchen doors and see **how the head chef manages every dish**, without chaos or burnt food.  
