@@ -1,0 +1,107 @@
+import { BlogLayout } from "@/components/BlogLayout";
+
+import { CodeWindow } from "@/components/CodeWindow";
+
+export const meta = {
+  date: "2025-08-25",
+  title: "Day 2: Meet the Kitchen Staff - Kubernetes Control Plane",
+  description:
+    "Discover the Kubernetes control plane with a fun kitchen analogy! Meet the head chef (API server), recipe book (etcd), and planners keeping your cluster running smoothly hands-on with kubectl.",
+  image:
+    "https://website-2025-bucket.s3.af-south-1.amazonaws.com/blog/meet-the-kitchen-staff-kubernetes-control-plane/meet-the-kitchen-staff-kubernetes-control-plane.jpg",
+  tags: ["Kubernetes Control Plane", "API Server", "etcd","DevOps Fundamentals", "Rancher Desktop"],
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />; 
+
+> Yesterday you set up your kitchen. Today, let’s meet the team running it the ones making sure every order comes out hot and correct.
+
+---
+
+## The Kitchen Hierarchy
+
+Every restaurant has a hierarchy. Kubernetes is no different. Here’s your kitchen management team (aka the **control plane**):
+
+- **API Server** → Head Chef  
+  Every order goes through the head chef. They approve, adjust, and delegate.  
+
+- **etcd** → Recipe Book  
+  The one true record. Ingredients, methods, customer preferences all stored here.  
+
+- **Scheduler** → Kitchen Planner 
+  Decides which station (worker node) cooks which dish (Pod). Keeps things balanced.  
+
+- **Controller Manager** → Sous-Chef  
+  Spots mistakes, fixes burnt dishes, and keeps everything running smoothly.  
+
+- **CoreDNS** → Kitchen Intercom  
+  When you yell “Table 5, Chicken Curry!”, it makes sure the right station hears you.  
+
+---
+
+## Check Who’s Working
+
+Run this to see the control plane components in action:
+
+<CodeWindow title="Command">
+```bash
+kubectl get pods -n kube-system
+```
+</CodeWindow>
+
+Sample output:
+
+Everything is alive and cooking.  
+
+![kubectl get pods -n kube-system](https://website-2025-bucket.s3.af-south-1.amazonaws.com/blog/meet-the-kitchen-staff-kubernetes-control-plane/kubectl-get-pods-1.png)
+
+---
+
+## Talking to the Head Chef
+
+Want to see the full menu of what Kubernetes can serve? Ask the head chef directly:
+
+<CodeWindow title="Command">
+```bash
+kubectl api-resources
+```
+</CodeWindow>
+
+This command lists every “dish” Kubernetes knows how to make Pods, Services, Deployments, Jobs, and more. Think of it as reading the restaurant’s full menu.
+
+![kubectl api-resources](https://website-2025-bucket.s3.af-south-1.amazonaws.com/blog/meet-the-kitchen-staff-kubernetes-control-plane/kubectl-api-resources.png)
+
+---
+
+## Peeking at the Recipe Book
+
+If you’re feeling brave, let’s peek at what’s inside the recipe book (`etcd`).  
+
+<CodeWindow title="Command">
+```bash
+kubectl get pods -A -o yaml | head -20
+```
+</CodeWindow>
+
+The output might look a bit like your ouma’s handwritten recipes messy at first, but once you know how to read it, it’s pure gold. 
+
+![kubectl get pods -A -o yaml | head -20](https://website-2025-bucket.s3.af-south-1.amazonaws.com/blog/meet-the-kitchen-staff-kubernetes-control-plane/kubectl-get-pods-2.png)
+
+---
+
+## Wrap-Up
+
+Today you:  
+- Met the **head chef, sous-chef, and planners** of Kubernetes  
+- Checked who’s running your kitchen with `kubectl get pods -n kube-system`  
+- Asked the head chef for the **menu of resources**  
+- Peeped at the recipe book to see how Pods are defined  
+
+---
+
+## Coming Tomorrow
+
+Tomorrow, we leave the manager’s office and step onto the kitchen floor.  
+You’ll deploy your **first dish (Pod)** and see how Kubernetes keeps it cooking.  
+
+
